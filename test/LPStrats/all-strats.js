@@ -656,8 +656,13 @@ const tests = [
     //   controllerAddress: "",
     //   snowglobeAddress: "",
     // },
+    // {
+    //   name: "JoeAvaxPtp",
+    //   controllerAddress: "",
+    //   snowglobeAddress: "",
+    // },
     {
-      name: "JoeAvaxPtp",
+      name: "JoeUsdcEUsdc",
       controllerAddress: "",
       snowglobeAddress: "",
     },
