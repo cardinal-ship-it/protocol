@@ -10,7 +10,7 @@ contract StrategyJoeUsdcEUsdcLp is StrategyJoeRushFarmBase {
     address public joe_usdce_usdc_lp = 0x2A8A315e82F85D1f0658C5D66A452Bbdd9356783;
     address public usdce = 0xA7D7079b0FEaD91F3e65f86E8915Cb59c1a4C664;
     address public usdc = 0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E;
-    address public daie = 0xd586E7F844cEa2F87f50152665BCbc2C279D8d70;
+
     constructor(
         address _governance,
         address _strategist,
@@ -29,12 +29,11 @@ contract StrategyJoeUsdcEUsdcLp is StrategyJoeRushFarmBase {
     {}
 
     function _swapFromJoeToUsdc(uint256 _keep) internal {
-        address[] memory path = new address[](5);
+        address[] memory path = new address[](4);
         path[0] = joe;
         path[1] = wavax;
-        path[2] = daie;
-        path[3] = usdce;
-        path[4] = usdc;
+        path[2] = usdce;
+        path[3] = usdc;
         IERC20(joe).safeApprove(joeRouter, 0);
         IERC20(joe).safeApprove(joeRouter, _keep);
         _swapTraderJoeWithPath(path, _keep);
@@ -53,8 +52,11 @@ contract StrategyJoeUsdcEUsdcLp is StrategyJoeRushFarmBase {
             if (_keep > 0) {
                 _takeFeeJoeToSnob(_keep);
             }
+
+            _joe = IERC20(joe).balanceOf(address(this));
+
             IERC20(joe).safeApprove(joeRouter, 0);
-            IERC20(joe).safeApprove(joeRouter, _joe.sub(_keep));
+            IERC20(joe).safeApprove(joeRouter, _joe);
 
             _swapTraderJoe(joe, usdce, _joe.div(2));
             _swapFromJoeToUsdc(_joe.div(2));
