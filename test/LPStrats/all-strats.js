@@ -661,11 +661,11 @@ const tests = [
     //   controllerAddress: "",
     //   snowglobeAddress: "",
     // },
-    {
-      name: "JoeUsdcEUsdc",
-      controllerAddress: "",
-      snowglobeAddress: "",
-    },
+    // {
+    //   name: "JoeUsdcEUsdc",
+    //   controllerAddress: "",
+    //   snowglobeAddress: "",
+    // },
     // {
     //   name: "AxialAvaxAxial",
     //   controllerAddress: "",
@@ -683,6 +683,11 @@ const tests = [
     //     snowglobeAddress: "",
     //     slot: 51
     //   },
+  {
+    name: "JoeAvaxIme",
+    controllerAddress: "",
+    snowglobeAddress: "",
+  },
 
 ];
 

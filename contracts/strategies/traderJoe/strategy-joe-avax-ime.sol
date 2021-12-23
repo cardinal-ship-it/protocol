@@ -5,9 +5,9 @@ import "../strategy-joe-rush-farm-base.sol";
 
 contract StrategyJoeAvaxImeLp is StrategyJoeRushFarmBase {
 
-    uint256 public avax_ime_poolId = ;
+    uint256 public avax_ime_poolId = 30;
 
-    address public joe_avax_ime_lp = ;
+    address public joe_avax_ime_lp = 0x5d95ae932D42E53Bb9DA4DE65E9b7263A4fA8564;
     address public ime = 0xF891214fdcF9cDaa5fdC42369eE4F27F226AdaD6;
 
 
@@ -75,7 +75,7 @@ contract StrategyJoeAvaxImeLp is StrategyJoeRushFarmBase {
          if (_ime > 0) {
             uint256 _keep2 = _ime.mul(keep).div(keepMax);
             if (_keep2 > 0){
-                _takeFeeimeToSnob(_keep2);
+                _takeFeeImeToSnob(_keep2);
             }
             
             _ime = IERC20(ime).balanceOf(address(this));
