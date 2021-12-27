@@ -683,12 +683,16 @@ const tests = [
     //     snowglobeAddress: "",
     //     slot: 51
     //   },
+    // {
+    //   name: "JoeAvaxIme",
+    //   controllerAddress: "",
+    //   snowglobeAddress: "",
+    // },
   {
-    name: "JoeAvaxIme",
+    name: "JoeAvaxPln",
     controllerAddress: "",
     snowglobeAddress: "",
   },
-
 ];
 
 for (const test of tests) {
